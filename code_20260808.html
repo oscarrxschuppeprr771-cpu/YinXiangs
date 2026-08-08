@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 优先电脑端渲染，缩放锁定桌面布局 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件名称 - 官方下载站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        /* 全屏轮播背景图 三张自动切换 */
+        body {
+            min-height: 100vh;
+            animation: bgSwitch 18s infinite ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+        }
+        @keyframes bgSwitch {
+            0%,30% {
+                background-image: url("./bg1.jpg");
+            }
+            33%,63% {
+                background-image: url("./bg2.jpg");
+            }
+            66%,100% {
+                background-image: url("./bg3.jpg");
+            }
+        }
+        /* 半透明遮罩，防止背景过亮看不清文字 */
+        .mask {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0,0,0,0.62);
+            z-index: 1;
+        }
+        .main-wrap {
+            position: relative;
+            z-index: 2;
+            width: 1100px;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 46px;
+            margin-bottom: 22px;
+            letter-spacing: 2px;
+        }
+        .desc-text {
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 720px;
+            margin: 0 auto 45px;
+            opacity: 0.93;
+        }
+        /* 三张软件展示图片区域 */
+        .img-group {
+            display: flex;
+            gap: 26px;
+            justify-content: center;
+            margin-bottom: 55px;
+        }
+        .img-group img {
+            width: 310px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.35);
+        }
+        /* 双下载按钮 */
+        .btn-box {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+        .download-btn {
+            padding: 16px 42px;
+            font-size: 19px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.28s all;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-normal {
+            background: #2563eb;
+            color: #fff;
+        }
+        .btn-portable {
+            background: #16a34a;
+            color: #fff;
+        }
+        .download-btn:hover {
+            transform: translateY(-4px);
+            opacity: 0.9;
+        }
+        /* 小屏简易适配，主体依旧偏向电脑端 */
+        @media (max-width:1120px) {
+            .main-wrap {
+                width: 96%;
+            }
+            .img-group {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mask"></div>
+    <div class="main-wrap">
+        <!-- 标题+简介 -->
+        <h1>你的软件项目名称</h1>
+        <p class="desc-text">
+            在此填写软件介绍正文，可写明功能特点、适配系统、使用场景，适配Windows桌面端，性能轻量化稳定运行，提供两种安装方案可供选择下载。
+        </p>
+
+        <!-- 三张展示截图 -->
+        <div class="img-group">
+            <img src="./show1.png" alt="软件界面截图1">
+            <img src="./show2.png" alt="软件界面截图2">
+            <img src="./show3.png" alt="软件界面截图3">
+        </div>
+
+        <!-- 两枚下载按钮 -->
+        <div class="btn-box">
+            <a href="填写下载链接地址" class="download-btn btn-normal">正式安装版下载</a>
+            <a href="填写下载链接地址" class="download-btn btn-portable">绿色便携版下载</a>
+        </div>
+    </div>
+</body>
+</html>
